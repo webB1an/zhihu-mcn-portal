@@ -6,7 +6,6 @@ const service = axios.create({
 })
 
 service.interceptors.response.use(response => {
-  console.log('response', response)
   const { data } = response
   const { code, msg } = data
   const _data = data.data
@@ -14,7 +13,7 @@ service.interceptors.response.use(response => {
     Message.error(msg)
     return Promise.reject(data)
   }
-  Message.success(msg)
+  // Message.success(msg)
   return _data
 }, error => {
   return Promise.reject(error)

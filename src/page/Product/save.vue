@@ -61,7 +61,6 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           const data = { ...this.form, ...defaultForm }
-          console.log(data)
           this._saveProduct(data)
           // alert('submit!')
         } else {
@@ -75,7 +74,6 @@ export default {
     },
     _saveProduct(data) {
       saveProduct(data).then(res => {
-        console.log(res)
       })
     }
   }

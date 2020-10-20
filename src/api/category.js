@@ -1,5 +1,13 @@
 import request from '../utils/request'
 
+export function searchCategory(name) {
+  return request({
+    url: '/category/search',
+    method: 'POST',
+    data: { name }
+  })
+}
+
 export function saveCategory(data) {
   return request({
     url: '/category/save',

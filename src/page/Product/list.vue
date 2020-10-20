@@ -54,12 +54,10 @@ export default {
   methods: {
     _getList() {
       productlist().then(res => {
-        console.log('res', res)
         this.tableData = res
       })
     },
     handleEditor(id) {
-      console.log(id)
       this.$router.push({ path: '/product/editor', query: { id }})
     }
   }

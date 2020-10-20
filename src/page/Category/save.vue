@@ -46,7 +46,6 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           const data = { ...this.form, ...defaultForm }
-          console.log(data)
           this._saveCategory(data)
           // alert('submit!')
         } else {
@@ -60,7 +59,6 @@ export default {
     },
     _saveCategory(data) {
       saveCategory(data).then(res => {
-        console.log(res)
       })
     }
   }

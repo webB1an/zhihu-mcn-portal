@@ -1,5 +1,13 @@
 import request from '../utils/request'
 
+export function searchProduct(name) {
+  return request({
+    url: '/product/search',
+    method: 'POST',
+    data: { name }
+  })
+}
+
 export function saveProduct(data) {
   return request({
     url: '/product/save',

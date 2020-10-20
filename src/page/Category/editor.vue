@@ -35,7 +35,6 @@ export default {
     }
   },
   created() {
-    console.log(this.$route)
     const { id } = this.$route.query
     if (!id) return
     this._getDetail(id)
@@ -43,7 +42,6 @@ export default {
   methods: {
     _getDetail(id) {
       categoryDetail(id).then(res => {
-        console.log('res', res)
         this.form = res
       })
     },
@@ -51,7 +49,6 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           const data = { ...this.form }
-          console.log(data)
           editorCategory(data)
           // alert('submit!')
         } else {

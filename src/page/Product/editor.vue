@@ -1,5 +1,5 @@
 <template>
-  <el-form ref="form&quot;" :model="form" :rules="rules" label-width="100px" class="form">
+  <el-form ref="form" :model="form" :rules="rules" label-width="100px" class="form">
     <el-form-item label="名称" prop="name">
       <el-input v-model="form.name" />
     </el-form-item>
@@ -50,7 +50,6 @@ export default {
     }
   },
   created() {
-    console.log(this.$route)
     const { id } = this.$route.query
     if (!id) return
     this._getDetail(id)
@@ -58,7 +57,6 @@ export default {
   methods: {
     _getDetail(id) {
       productDetail(id).then(res => {
-        console.log('res', res)
         this.form = res
       })
     },
@@ -66,7 +64,6 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           const data = { ...this.form }
-          console.log(data)
           editorProduct(data)
           // alert('submit!')
         } else {

@@ -40,12 +40,10 @@ export default {
   methods: {
     _getList() {
       categorylist().then(res => {
-        console.log('res', res)
         this.tableData = res
       })
     },
     handleEditor(id) {
-      console.log(id)
       this.$router.push({ path: '/category/editor', query: { id }})
     }
   }

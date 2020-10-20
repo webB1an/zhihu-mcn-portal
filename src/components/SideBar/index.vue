@@ -34,6 +34,13 @@
       </el-menu-item>
     </router-link>
 
+    <router-link to="/category/list">
+      <el-menu-item index="/category/list">
+        <!-- <i class="el-icon-menu" /> -->
+        <span slot="title">类目列表</span>
+      </el-menu-item>
+    </router-link>
+
     <router-link to="/category/editor">
       <el-menu-item index="/category/editor">
         <!-- <i class="el-icon-menu" /> -->

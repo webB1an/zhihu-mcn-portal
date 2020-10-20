@@ -30,6 +30,10 @@ const routes = [
         component: () => import('../page/Category/save')
       },
       {
+        path: '/category/list',
+        component: () => import('../page/Category/list')
+      },
+      {
         path: '/category/editor',
         component: () => import('../page/Category/editor')
       },

@@ -18,6 +18,10 @@ const routes = [
         component: SaveProduct
       },
       {
+        path: '/product/list',
+        component: () => import('../page/Product/list')
+      },
+      {
         path: '/product/editor',
         component: () => import('../page/Product/editor')
       },
@@ -41,6 +45,9 @@ const routes = [
 
   }
 ]
-export default new Router({
+
+const router = new Router({
   routes
 })
+
+export default router

@@ -1,0 +1,71 @@
+<template>
+  <el-table
+    :data="tableData"
+    border
+    style="width: 100%"
+  >
+    <el-table-column
+      prop="name"
+      label="名称"
+      width="180"
+    />
+    <el-table-column
+      prop="price"
+      label="价格"
+      width="180"
+    />
+    <el-table-column
+      prop="pros"
+      label="优点"
+    />
+    <el-table-column
+      prop="cons"
+      label="缺点"
+    />
+    <el-table-column
+      prop="description"
+      label="描述"
+    />
+    <el-table-column
+      fixed="right"
+      label="操作"
+      width="100"
+    >
+      <template slot-scope="scope">
+        <el-button type="text" size="small" @click="handleEditor(scope.row.id)">
+          编辑
+        </el-button>
+      </template>
+    </el-table-column>
+  </el-table>
+</template>
+
+<script>
+import { productlist } from '../../api/product'
+export default {
+  data() {
+    return {
+      tableData: []
+    }
+  },
+  created() {
+    this._getList()
+  },
+  methods: {
+    _getList() {
+      productlist().then(res => {
+        console.log('res', res)
+        this.tableData = res
+      })
+    },
+    handleEditor(id) {
+      console.log(id)
+      this.$router.push({ path: '/product/editor', query: { id }})
+    }
+  }
+}
+</script>
+
+<style>
+
+</style>

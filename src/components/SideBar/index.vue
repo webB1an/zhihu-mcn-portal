@@ -13,6 +13,13 @@
       </el-menu-item>
     </router-link>
 
+    <router-link to="/product/list">
+      <el-menu-item index="/product/list">
+        <!-- <i class="el-icon-menu" /> -->
+        <span slot="title">商品列表</span>
+      </el-menu-item>
+    </router-link>
+
     <router-link to="/product/editor">
       <el-menu-item index="/product/editor">
         <!-- <i class="el-icon-menu" /> -->

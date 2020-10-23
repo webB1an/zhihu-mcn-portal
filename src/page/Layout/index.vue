@@ -4,6 +4,7 @@
       <side-bar />
     </el-aside>
     <el-main>
+      <h2>{{ $route.name }}</h2>
       <router-view />
     </el-main>
   </el-container>
@@ -12,7 +13,10 @@
 <script>
 import SideBar from '../../components/SideBar'
 export default {
-  components: { SideBar }
+  components: { SideBar },
+  created() {
+    console.log(this.$route)
+  }
 }
 </script>
 

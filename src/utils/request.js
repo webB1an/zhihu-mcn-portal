@@ -13,7 +13,7 @@ service.interceptors.response.use(response => {
     Message.error(msg)
     return Promise.reject(data)
   }
-  // Message.success(msg)
+  Message.success(msg)
   return _data
 }, error => {
   return Promise.reject(error)

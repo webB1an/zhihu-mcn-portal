@@ -12,8 +12,15 @@
     <el-table-column
       prop="price"
       label="价格"
-      width="180"
     />
+    <el-table-column
+      prop="url"
+      label="链接"
+    >
+      <template slot-scope="scope">
+        <a :href="scope.row.url">点击跳转</a>
+      </template>
+    </el-table-column>
     <el-table-column
       prop="pros"
       label="优点"
@@ -25,7 +32,12 @@
     <el-table-column
       prop="description"
       label="描述"
-    />
+      width="230px"
+    >
+      <template slot-scope="scope">
+        {{ scope.row.description.substring(0, 10) }}
+      </template>
+    </el-table-column>
     <el-table-column
       fixed="right"
       label="操作"

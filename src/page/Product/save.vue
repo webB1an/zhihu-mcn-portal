@@ -6,6 +6,9 @@
     <el-form-item label="价格" prop="price">
       <el-input v-model="form.price" type="number" />
     </el-form-item>
+    <el-form-item label="链接" prop="url">
+      <el-input v-model="form.url" />
+    </el-form-item>
     <el-form-item label="优点" prop="pros">
       <el-input v-model="form.pros" />
     </el-form-item>
@@ -28,17 +31,18 @@
 
 <script>
 import { saveProduct } from '../../api/product'
-const defaultForm = {
-  pros: '暂无',
-  cons: '暂无',
-  description: '暂无'
-}
+// const defaultForm = {
+//   pros: '暂无',
+//   cons: '暂无',
+//   description: '暂无'
+// }
 export default {
   data() {
     return {
       form: {
         name: '',
         price: '',
+        url: '',
         pros: '',
         cons: '',
         description: ''
@@ -49,6 +53,9 @@ export default {
         ],
         price: [
           { required: true, message: '请输入价格', trigger: 'blur' }
+        ],
+        url: [
+          { required: true, message: '请输url', trigger: 'blur' }
         ]
       }
     }
@@ -60,7 +67,7 @@ export default {
     submit(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          const data = { ...this.form, ...defaultForm }
+          const data = { ...this.form }
           this._saveProduct(data)
           // alert('submit!')
         } else {

@@ -19,11 +19,11 @@
 
 <script>
 import { saveCategory } from '../../api/category'
-const defaultForm = {
-  pros: '暂无',
-  cons: '暂无',
-  description: '暂无'
-}
+// const defaultForm = {
+//   pros: '暂无',
+//   cons: '暂无',
+//   description: '暂无'
+// }
 export default {
   data() {
     return {
@@ -45,7 +45,7 @@ export default {
     submit(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          const data = { ...this.form, ...defaultForm }
+          const data = { ...this.form }
           this._saveCategory(data)
           // alert('submit!')
         } else {

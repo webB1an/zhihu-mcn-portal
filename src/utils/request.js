@@ -6,14 +6,16 @@ const service = axios.create({
 })
 
 service.interceptors.response.use(response => {
-  const { data } = response
+  const { data, config } = response
   const { code, msg } = data
   const _data = data.data
   if (code) {
     Message.error(msg)
     return Promise.reject(data)
   }
-  Message.success(msg)
+  if (config.url.includes('save') || config.url.includes('editor')) {
+    Message.success(msg)
+  }
   return _data
 }, error => {
   return Promise.reject(error)

@@ -15,7 +15,7 @@ import SideBar from '../../components/SideBar'
 export default {
   components: { SideBar },
   created() {
-    console.log(this.$route)
+    // console.log(this.$route)
   }
 }
 </script>

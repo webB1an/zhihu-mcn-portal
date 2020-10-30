@@ -68,7 +68,7 @@ export default {
       const { categoryId, productIds } = this.form
       if (!categoryId || !productIds.length) return this.$message.error('请选择相关信息！')
       saveRelation(this.form).then(res => {
-        this.$message.success('保存成功！')
+        // this.$message.success('保存成功！')
       })
     },
     remoteCategory(query = '') {

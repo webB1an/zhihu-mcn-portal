@@ -18,7 +18,7 @@
       label="链接"
     >
       <template slot-scope="scope">
-        <a :href="scope.row.url">点击跳转</a>
+        <a :href="scope.row.url" target="_blank">点击跳转</a>
       </template>
     </el-table-column>
     <el-table-column

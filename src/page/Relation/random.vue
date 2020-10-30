@@ -58,6 +58,9 @@ export default {
             if (k === 'price') {
               title = '价格'
             }
+            if (k === 'url') {
+              title = '链接'
+            }
             if (k === 'pros') {
               title = '优点'
             }

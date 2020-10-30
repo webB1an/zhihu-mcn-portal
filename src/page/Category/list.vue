@@ -18,16 +18,19 @@
       width="100"
     >
       <template slot-scope="scope">
-        <el-button type="text" size="small" @click="handleEditor(scope.row.id)">
+        <el-link type="primary" @click="handleEditor(scope.row.id)">
           编辑
-        </el-button>
+        </el-link>
+        <el-link type="danger" @click="handleDelete(scope.row.id)">
+          删除
+        </el-link>
       </template>
     </el-table-column>
   </el-table>
 </template>
 
 <script>
-import { categorylist } from '../../api/category'
+import { categorylist, deleteCategory } from '../../api/category'
 export default {
   data() {
     return {
@@ -45,6 +48,12 @@ export default {
     },
     handleEditor(id) {
       this.$router.push({ path: '/category/editor', query: { id }})
+    },
+    handleDelete(id) {
+      console.log(id)
+      deleteCategory(id).then(res => {
+        this._getList()
+      })
     }
   }
 }

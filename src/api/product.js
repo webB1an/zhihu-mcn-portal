@@ -39,3 +39,11 @@ export function editorProduct(data) {
     data
   })
 }
+
+export function deleteProduct(id) {
+  return request({
+    url: '/product/delete',
+    method: 'POST',
+    data: { id }
+  })
+}

@@ -49,6 +49,11 @@ const routes = [
         component: () => import('../page/Relation/save')
       },
       {
+        path: '/relation/list',
+        name: '关系列表',
+        component: () => import('../page/Relation/list')
+      },
+      {
         path: '/relation/random',
         name: '随机生成',
         component: () => import('../page/Relation/random')

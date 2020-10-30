@@ -19,4 +19,10 @@ html, body, #app {
   width: 100%;
   height: 100%;
 }
+.el-link {
+  margin-right: 10px
+}
+.mt20 {
+  margin-top: 20px
+}
 </style>

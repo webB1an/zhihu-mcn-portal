@@ -32,6 +32,14 @@ export function categoryDetail(id) {
   })
 }
 
+export function deleteCategory(id) {
+  return request({
+    url: '/category/delete',
+    method: 'POST',
+    data: { id }
+  })
+}
+
 export function editorCategory(data) {
   return request({
     url: '/category/editor',

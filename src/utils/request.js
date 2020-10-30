@@ -13,7 +13,7 @@ service.interceptors.response.use(response => {
     Message.error(msg)
     return Promise.reject(data)
   }
-  if (config.url.includes('save') || config.url.includes('editor')) {
+  if (config.url.includes('save') || config.url.includes('editor') || config.url.includes('delete')) {
     Message.success(msg)
   }
   return _data

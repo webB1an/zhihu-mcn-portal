@@ -7,7 +7,13 @@ export function saveRelation(data) {
     data
   })
 }
-
+export function getRelationList(categoryId) {
+  return request({
+    url: '/relation/list',
+    method: 'POST',
+    data: { categoryId }
+  })
+}
 export function getRandomProduct(categoryId) {
   return request({
     url: '/relation/random',

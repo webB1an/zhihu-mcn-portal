@@ -63,6 +63,12 @@
         </el-menu-item>
       </router-link>
 
+      <router-link to="/relation/list">
+        <el-menu-item index="/relation/list">
+          <span slot="title">关系列表</span>
+        </el-menu-item>
+      </router-link>
+
       <router-link to="/relation/random">
         <el-menu-item index="/relation/random">
           <span slot="title">随机生成</span>

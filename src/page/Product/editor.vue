@@ -22,9 +22,6 @@
       <el-button type="primary" @click="submit('form')">
         确认编辑
       </el-button>
-      <el-button @click="reset('form')">
-        重置
-      </el-button>
     </el-form-item>
   </el-form>
 </template>

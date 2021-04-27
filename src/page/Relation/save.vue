@@ -8,6 +8,7 @@
         reserve-keyword
         placeholder="可输入关键词"
         :remote-method="remoteCategory"
+        @change="changeCategory"
       >
         <el-option
           v-for="item in categoryList"
@@ -61,7 +62,7 @@ export default {
   },
   created() {
     this._getCategory()
-    this._getProduct()
+    // this._getProduct()
   },
   methods: {
     submitForm() {
@@ -70,6 +71,9 @@ export default {
       saveRelation(this.form).then(res => {
         // this.$message.success('保存成功！')
       })
+    },
+    changeCategory(query) {
+      this._getProduct(this.categoryList.find(category => category.id === query).name)
     },
     remoteCategory(query = '') {
       this._getCategory(query)
@@ -85,6 +89,7 @@ export default {
     _getProduct(name = '') {
       searchProduct(name).then(res => {
         this.productList = res
+        this.form.productIds = res.map(product => product.id)
       })
     }
   }
